@@ -9,11 +9,11 @@ const projects = [
         name: "Personal", 
         description: "Personal Projects to test skills", 
     },
-    {
-        name: "Professional", 
-        description: "Professionally applied projects shared with permission",
-    },
 ]
+
+function projectSelected(name) {
+    console.log(`${name} clicked`)
+}
 
 function Nav() {
 
@@ -28,21 +28,22 @@ function Nav() {
                 <ul className="flex-row">
                     <li className="mx-2">
                         <a href="#about">
-                            My Story
+                            About Me
                         </a>
                     </li>
-                    <li>
-                        <span>Contact</span>
-                    </li>
-                        {projects.map((project) => (
-                            <li className="mx-1"
+                    {projects.map((project) => (
+                            <li 
+                            className="mx-1"
                             key={project.name}
                             >
-                                <span>
+                                <span onClick={() => projectSelected(project.name)}>
                                     {project.name}
                                 </span>
                             </li>
                         ))}
+                    <li>
+                        <span>Contact</span>
+                    </li>
                 </ul>
             </nav>
         </header>
