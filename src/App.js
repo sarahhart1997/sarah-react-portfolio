@@ -1,5 +1,5 @@
 import React from 'react';
-import About from './componets/About';
+import About from './componets/about';
 
 function App() {
 
